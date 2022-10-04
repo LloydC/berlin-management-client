@@ -5,9 +5,6 @@ import AddTask from "../components/AddTask";
 import TaskCard from "../components/TaskCard";
 
 
-const API_URL = "http://localhost:5005";
-
-
 function ProjectDetailsPage (props) {
   const [project, setProject] = useState(null);
   const { projectId } = useParams();
@@ -15,7 +12,7 @@ function ProjectDetailsPage (props) {
   const getProject = () => {
     const storedToken = localStorage.getItem("authToken"); // capture the value of 'authToken' key
     axios
-      .get(`${API_URL}/api/projects/${projectId}`, {headers: {Authorization: `Bearer ${storedToken}`}})
+      .get(`${process.env.REACT_APP_API_URL}/api/projects/${projectId}`, {headers: {Authorization: `Bearer ${storedToken}`}})
       .then((response) => {
       	const oneProject = response.data;
       	setProject(oneProject);
