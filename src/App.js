@@ -19,8 +19,8 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/signup" element={<IsAnon><SignUpPage /></IsAnon>} />
         <Route exact path="/login" element={<IsAnon><LoginPage /></IsAnon>} />
-        <Route exact path="/projects" element={<IsPrivate> <ProjectListPage /> </IsPrivate> } />
-        <Route exact path="/projects/:projectId" element={<IsPrivate> <ProjectDetailsPage /> </IsPrivate>} />
+        <Route exact path="/projects" element={ <ProjectListPage /> } />
+        <Route exact path="/projects/:projectId" element={ <ProjectDetailsPage /> } />
         <Route exact path="/projects/edit/:projectId" element={<IsPrivate> <EditProjectPage /> </IsPrivate>} />           
       </Routes>
     </div>
