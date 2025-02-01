@@ -8,11 +8,10 @@ function ProjectListPage() {
   const [projects, setProjects] = useState([]);
 
   const getAllProjects = () => {
-    const storedToken = localStorage.getItem("authToken");
+    // const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/projects`,
-      { headers: { Authorization: `Bearer ${storedToken}` } })
+      .get(`https://json-server-backend-8t3m.onrender.com/projects`)
       .then((response) => setProjects(response.data))
       .catch((error) => console.log(error));
   };
